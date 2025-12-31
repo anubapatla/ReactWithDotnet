@@ -1,26 +1,14 @@
 import { createRoot } from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./style.css";
+import Students from './Students';
 import Header from './Layout.jsx/Header';
+import StudentReview from './StudentReview';
 
 const courseName = "React";
 const lectureCount = 11;
 const isActive = false;
-function Students(){
-  const fullName = "anusha"
-  const programingExp = 0;
-  return(
-    <div className='container p-4 bg-success my-3 rounded'>
-      <div  className="row border">
-        <div className="col-2">
-          <img src={`https://ui-avatars.com/api/?name=${fullName}`}></img>       </div>
-      <div className="col-8">{fullName}<br/>
-      coding experience{programingExp} years
-     </div>
-     </div>
-    </div>
-  )
-}
+
 export function HomePage () {
   return (
     <div>
@@ -39,7 +27,12 @@ export function HomePage () {
         Enter Task:{""}
          <input type="text" maxLength={6} disabled={isActive}></input>
        </div>
-       <Students/>
+       <hr/>
+       <h5 className="pt-2"> students enrolled</h5>
+       <Students  experience={2} name="anu Bapatla"/>
+       <Students  experience={4} name="pravs chatala"/>
+       <Students  experience={5}  name="neil sri"/>
+       <StudentReview/>
       <Footer/>
       </div>
     );
