@@ -12,7 +12,8 @@ function Students(){
   return(
     <div className='container p-4 bg-success my-3 rounded'>
       <div  className="row border">
-        <div className="col-2">Image</div>
+        <div className="col-2">
+          <img src={`https://ui-avatars.com/api/?name=${fullName}`}></img>       </div>
       <div className="col-8">{fullName}<br/>
       coding experience{programingExp} years
      </div>
