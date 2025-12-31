@@ -1,36 +1,60 @@
 import { createRoot } from 'react-dom/client';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./style.css";
+import Header from './Layout.jsx/Header';
 
-const root= createRoot(document.getElementById('root'));
-const pagestyle ={
-  textAlign:"center",
-  backgroundColor:"lighgray",
-  padding:"10px",
+const courseName = "React";
+const lectureCount = 11;
+const isActive = false;
+function Students(){
+  const fullName = "anusha"
+  const programingExp = 0;
+  return(
+    <div className='container p-4 bg-success my-3 rounded'>
+      <div  className="row border">
+        <div className="col-2">Image</div>
+      <div className="col-8">{fullName}<br/>
+      coding experience{programingExp} years
+     </div>
+     </div>
+    </div>
+  )
 }
-export function HomePage (){
+export function HomePage () {
   return (
     <div>
       <Header/>
-      <p className="customHeading"> we are super exited to learn react</p>
+      <p className="customHeading" > we are super exited to learn react</p>
+       <h3> Topics to learn in { courseName}courses</h3>
+       <p> lecture count -{ lectureCount}</p>
+       <p> Is Active:{isActive}</p>
+       <ul>
+          <li> jsx</li>
+           <li> component</li>
+           <li> routing</li>
+            <li> stete mangement</li>
+       </ul>
+       <div>
+        Enter Task:{""}
+         <input type="text" maxLength={6} disabled={isActive}></input>
+       </div>
+       <Students/>
       <Footer/>
       </div>
     );
 }
-function Header(){
-  return(
-    <div>
-      <h1 style={pagestyle} className="text-success"> welcome to the react course</h1>
-    </div>
-  );
-}
+
 function Footer(){
   return(
     <div>
       <p> made with doenet mystery</p>
     </div>
-  )
+  );
 }
-root.render(
-  <HomePage/>
-)
+const container = document.getElementById('root');
+if (!container.hasChildNodes()) {
+  const root = createRoot(container);
+  root.render(<HomePage />);
+}
+
 
