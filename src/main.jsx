@@ -4,6 +4,7 @@ import "./style.css";
 import Students from './Students';
 import Header from './Layout.jsx/Header';
 import StudentReview from './StudentReview';
+import {Footer} from './Layout.jsx/Footer';
 
 const courseName = "React";
 const lectureCount = 11;
@@ -29,22 +30,16 @@ export function HomePage () {
        </div>
        <hr/>
        <h5 className="pt-2"> students enrolled</h5>
-       <Students  experience={2} name="anu Bapatla"/>
+       <Students  experience={2} name="anu Bapatla">   <StudentReview/></Students>
        <Students  experience={4} name="pravs chatala"/>
        <Students  experience={5}  name="neil sri"/>
-       <StudentReview/>
+     
       <Footer/>
       </div>
     );
 }
 
-function Footer(){
-  return(
-    <div>
-      <p> made with doenet mystery</p>
-    </div>
-  );
-}
+
 const container = document.getElementById('root');
 if (!container.hasChildNodes()) {
   const root = createRoot(container);

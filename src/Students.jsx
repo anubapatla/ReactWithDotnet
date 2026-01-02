@@ -1,4 +1,4 @@
- function Students(props){
+ const Students=(props)=>{
   //const fullName = "anusha"
   //const programingExp = 0;
   return(
@@ -10,6 +10,7 @@
       <div className="col-8">{props.name}<br/>
       coding experience{props.experience} years
      </div>
+     <div className="col-2">{props.children}</div>
      </div>
     </div>
   )
