@@ -7,7 +7,7 @@ import Counter from './Layout/Counter'
 createRoot(document.getElementById('root')).render(
   <div>
     <Header />
-    <main classNmae="flex-fill">
+    <main className="flex-fill">
       <Counter></Counter>
     </main>
     <Footer />
