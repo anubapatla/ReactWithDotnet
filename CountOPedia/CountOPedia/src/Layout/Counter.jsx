@@ -6,26 +6,24 @@ function Counter() {
     let [gameStatus, setGameStatus] = useState("")//you won or lost
 
     function handleIncrement() {
-        setCount(function (prev) {
-            const newvalue = prev + 1;
-            if (newvalue >= 5) {
-                setGameStatus("you won");
-            }
-            else {
-                setGameStatus("");
-            }
-            return prev + 1;
-        });
+        const newValue = count + 1;
+        setCount(newValue);
+        if (newValue >= 5) {
+            setGameStatus("you won");
+        }
+        else {
+            setGameStatus("");
+        }
     }
     function handleDecrement() {
-        setCount(function (prev) {
-            const newValue = prev - 1;
-            if (newValue <= 5) {
-            } else {
-                setGameStatus("");
-            }
-            return newValue;
-        });
+        const newValue = count - 1;
+        setCount(newValue);
+        if (newValue <= -5) {
+            setGameStatus("you lost");
+        }
+        else {
+            setGameStatus("");
+        }
     }
 
     function handleRandomPlay() {
