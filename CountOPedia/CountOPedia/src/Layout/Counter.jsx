@@ -21,9 +21,8 @@ function Counter() {
         if (newValue <= -5) {
             setGameStatus("you lost");
         }
-        else {
-            setGameStatus("");
-        }
+
+
     }
 
     function handleRandomPlay() {
